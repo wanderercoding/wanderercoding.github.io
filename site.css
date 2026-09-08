@@ -1,0 +1,107 @@
+html {
+    color-scheme: dark;
+    background: #121212;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #e5e7eb;
+    background: #121212;
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+
+a {
+    color: #93c5fd;
+}
+
+.title {
+    font-size: 4em;
+    font-weight: 900;
+    text-align: center;
+}
+
+.title-subtitle {
+    font-size: 3em;
+}
+
+.title-bar {
+    height: 0.3em;
+    width: 100%;
+    background: #383838;
+}
+
+.level1 {
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0.5em 0;
+    border-bottom: 2px solid gray;
+    text-align: center;
+}
+
+.level2 {
+    font-size: 2em;
+    font-weight: 600;
+    margin: 0.3em 0;
+}
+
+.level3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-indent: 2em;
+    margin: 0.2em 0;
+}
+
+.level4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-indent: 4em;
+    margin: 0.1em 0;
+}
+
+.level5 {
+    font-size: 1em;
+    font-weight: 500;
+    text-indent: 6em;
+}
+
+.notes {
+    margin-left: 10em;
+}
+
+.References {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.References1 {
+    font-size: 1em;
+    font-weight: 500;
+    text-indent: 2em;
+}
+
+pre {
+    position: relative;
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    border-radius: 0.5rem;
+    background: #282c34;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+pre code {
+    display: block;
+    padding: 0;
+    color: #abb2bf;
+    font-family: Consolas, "Cascadia Code", "Courier New", monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    white-space: pre;
+}
+
+::selection {
+    color: #ffffff;
+    background: #2563eb;
+}
