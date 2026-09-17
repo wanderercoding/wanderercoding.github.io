@@ -221,7 +221,7 @@ return 0;</code></pre>
     <div class="level4">C# 提供了一组内置类型，可在任何程序中使用，而无需其他引用。</div>
 
     <section class="dotnet-grid-table" aria-label=".NET 内置类型表">
-        <div class="cell header">关键字</div> <div class="cell header">.NET 类型</div> <div class="cell header">存储字节</div> <div class="cell header">最小值</div> <div class="cell header">最大值</div> <div class="cell header">精度 / 说明</div> <div class="cell header">字面值示例</div>
+        <div class="cell header">关键字</div> <div class="cell header">.NET 类型</div> <div class="cell header">存储字节</div> <div class="cell header">最小值 (MinValue)</div> <div class="cell header">最大值 (MaxValue)</div> <div class="cell header">精度 / 说明</div> <div class="cell header">字面值示例</div>
         <div class="cell" data-label="关键字">bool</div> <div class="cell type" data-label=".NET 类型">System.Boolean</div> <div class="cell" data-label="大小（字节）">1</div> <div class="cell" data-label="最小值">false</div> <div class="cell" data-label="最大值">true</div> <div class="cell" data-label="精度 / 说明">布尔值</div> <div class="cell literal" data-label="字面值示例">true</div>
         <div class="cell" data-label="关键字">byte</div> <div class="cell type" data-label=".NET 类型">System.Byte</div> <div class="cell" data-label="大小（字节）">1</div> <div class="cell" data-label="最小值">0</div> <div class="cell" data-label="最大值">255</div> <div class="cell" data-label="精度 / 说明">无符号 8 位整数</div> <div class="cell literal" data-label="字面值示例">255</div>
         <div class="cell" data-label="关键字">sbyte</div> <div class="cell type" data-label=".NET 类型">System.SByte</div> <div class="cell" data-label="大小（字节）">1</div> <div class="cell" data-label="最小值">-128</div> <div class="cell" data-label="最大值">127</div> <div class="cell" data-label="精度 / 说明">有符号 8 位整数</div> <div class="cell literal" data-label="字面值示例">(sbyte)-1</div>
@@ -448,7 +448,45 @@ return 0;</code></pre>
         return sb.ToString();
     }
 </code></pre>
-    <div class="level2">3 运算符、表达式</div>
+
+    <div class="level2"><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/">3 运算符、表达式</a></div>
+    <div class="level3">3.1 算数运算符</div>
+    <div class="level4">一元： ++（增量）、--（减量）、+（加）和 -（减）运算符；</div>
+    <div class="level4">二元： *（乘法）、/（除法）、%（余数）、+（加法）和 -（减法）运算符；</div>
+    <div class="level4">整数除法</div>
+    <div class="level3">3.2 Boolean 逻辑运算符</div>
+    <div class="level4">一元： !（逻辑非）运算符。</div>
+    <div class="level4">二元： &（逻辑与）、|（逻辑或）和 ^（逻辑异或）运算符。 这些运算符始终计算两个操作数。</div>
+    <div class="level4">二元： &&（条件逻辑与）和 ||（条件逻辑或）运算符。 这些运算符仅在必要时才计算右侧操作数。</div>
+    <div class="level4">null 的布尔逻辑运算符</div>
+    <div class="level3">3.3 位运算符和移位运算符</div>
+    <div class="level4">一元 ~（按位求补）运算符</div>
+    <div class="level4">二进制 <<（左移）、>>（右移）和 >>>（无符号右移）运算符</div>
+    <div class="level4">二进制 &（逻辑 AND）、|（逻辑 OR）和 ^（逻辑异或）运算符</div>
+    <div class="level3">3.4 集合表达式：集合表达式在 [ 和 ] 括号之间包含元素的序列</div>
+    <div class="level3">3.5 相等运算符</div>
+    <div class="level4"> ==（相等） 和 !=（不等） 运算符检查其操作数是否相等。 </div>
+    <div class="level4">当内容相等时，值类型相等。 当两个变量引用同一存储时，引用类型相等。</div>
+    <div class="level4">记录类型相等性：记录类型支持 == 和 != 运算符，这些运算符默认提供值相等性语义。</div>
+    <div class="level4">字符串相等性：如果两个字符串均为 null 或者两个字符串实例具有相等长度且在每个字符位置有相同字符，则这两个操作数相等。</div>
+    <div class="level4">委托相等</div>
+    <div class="level3">3.6 比较运算符： < （小于）、 > （大于或等于）<=和>=（大于或等于）比较</div>
+    <div class="level3">3.7 成员访问和空值条件运算符和表达式</div>
+    <div class="level4">. （成员访问）：访问命名空间或类型的成员。</div>
+    <div class="level4">[] （数组元素或索引器访问）：访问数组元素或类型索引器。</div>
+    <div class="level4">?. 和 ?[] （null 条件运算符）：仅当操作数为非 null 时，才执行成员或元素访问操作。</div>
+    <div class="level5">如果 a 的计算结果为 null，则 a?.x 或 a?[x] 的结果为 null。</div>
+    <div class="level5">如果 a 的计算结果为非 null，则 a?.x 或 a?[x] 的结果将分别与 a.x 或 a[x] 的结果相同。</div>
+    <div class="level4">() （调用）：调用访问的方法或调用委托。() 的其他用法：可以使用括号来调整表达式中计算操作的顺序。强制转换表达式，其执行显式类型转换，也可以使用括号。</div>
+    <div class="level4">^ （结尾索引）：指示元素位置来自序列的末尾。</div>
+    <div class="level4">.. （range）：指定可用于获取序列元素范围的索引范围。</div>
+    <div class="level3">3.8 类型测试运算符和强制转换表达式</div>
+    <div class="level4">is 运算符检查表达式结果的运行时类型是否与给定类型兼容。</div>
+    <div class="level4">as 运算符将表达式显式转换为给定类型。</div>
+    <div class="level4">强制转换表达式执行到目标类型的显式转换。</div>
+    <div class="level4">typeof 运算符获取某个类型的 System.Type 实例。</div>
+
+
     <div class="level2">4 流程控制</div>
 
 
