@@ -26,31 +26,31 @@
             line-height: 1.4;
         }
 
-        .signatures-table .cell {
-            padding: 12px 14px;
-            border-bottom: 1px solid #e0e0e0;
-            border-right: 1px solid #e0e0e0;
-            background: transparent;
-            color: inherit;
-            word-break: break-word;
-            min-width: 0; /* 允许列收缩，避免内容撑开 */
-        }
+            .signatures-table .cell {
+                padding: 12px 14px;
+                border-bottom: 1px solid #e0e0e0;
+                border-right: 1px solid #e0e0e0;
+                background: transparent;
+                color: inherit;
+                word-break: break-word;
+                min-width: 0; /* 允许列收缩，避免内容撑开 */
+            }
 
-        .signatures-table .cell:nth-child(2n) {
-            border-right: none;
-            background: transparent;
-            font-family: "Segoe UI Mono", Consolas, "Liberation Mono", Menlo, monospace;
-        }
+                .signatures-table .cell:nth-child(2n) {
+                    border-right: none;
+                    background: transparent;
+                    font-family: "Segoe UI Mono", Consolas, "Liberation Mono", Menlo, monospace;
+                }
 
-        .signatures-table .header {
-            background: transparent;
-            font-weight: 600;
-            color: inherit;
-        }
+            .signatures-table .header {
+                background: transparent;
+                font-weight: 600;
+                color: inherit;
+            }
 
-        .signatures-table .cell:nth-last-child(-n+2) {
-            border-bottom: none;
-        }
+            .signatures-table .cell:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
 
         @media (max-width: 640px) {
             .signatures-table {
@@ -58,15 +58,15 @@
                 font-size: 17px;
             }
 
-            .signatures-table .cell {
-                border-right: none;
-            }
+                .signatures-table .cell {
+                    border-right: none;
+                }
 
-            .signatures-table .cell:nth-child(odd) {
-                background: transparent;
-                font-weight: 600;
-                color: inherit;
-            }
+                    .signatures-table .cell:nth-child(odd) {
+                        background: transparent;
+                        font-weight: 600;
+                        color: inherit;
+                    }
         }
 
         /* dotnet-grid-table: 使用 Grid 布局并允许列在需要时收缩，
@@ -87,38 +87,68 @@
             line-height: 1.35;
         }
 
-        .dotnet-grid-table > .cell {
-            min-width: 0; /* 关键：允许格子收缩 */
-            padding: 8px 10px;
-            border-bottom: 1px solid #cfcfcf;
-            border-right: 1px solid #cfcfcf;
-            background: transparent;
-            word-break: break-word;
-        }
+            .dotnet-grid-table > .cell {
+                min-width: 0; /* 关键：允许格子收缩 */
+                padding: 8px 10px;
+                border-bottom: 1px solid #cfcfcf;
+                border-right: 1px solid #cfcfcf;
+                background: transparent;
+                word-break: break-word;
+            }
 
-        .dotnet-grid-table .header { font-weight: 600; background: transparent; }
-        .dotnet-grid-table .type { font-family: "Segoe UI Mono", Consolas, monospace; }
-        .dotnet-grid-table .literal { font-family: "Segoe UI Mono", Consolas, monospace; white-space: nowrap; }
+            .dotnet-grid-table .header {
+                font-weight: 600;
+                background: transparent;
+            }
 
-        /* 去掉每行最后一列的右边框（7 列一组） */
-        .dotnet-grid-table .cell:nth-child(7n) { border-right: none; }
-        /* 去掉最后一行的下边框（最后 7 个单元格） */
-        .dotnet-grid-table .cell:nth-last-child(-n+7) { border-bottom: none; }
+            .dotnet-grid-table .type {
+                font-family: "Segoe UI Mono", Consolas, monospace;
+            }
 
-        /* 将“最小值/最大值”列（第4、5列）在溢出时隐藏并显示省略号。基于每行 7 列 */
-        .dotnet-grid-table .cell:nth-child(7n+4),
-        .dotnet-grid-table .cell:nth-child(7n+5) {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+            .dotnet-grid-table .literal {
+                font-family: "Segoe UI Mono", Consolas, monospace;
+                white-space: nowrap;
+            }
+
+            /* 去掉每行最后一列的右边框（7 列一组） */
+            .dotnet-grid-table .cell:nth-child(7n) {
+                border-right: none;
+            }
+            /* 去掉最后一行的下边框（最后 7 个单元格） */
+            .dotnet-grid-table .cell:nth-last-child(-n+7) {
+                border-bottom: none;
+            }
+
+            /* 将“最小值/最大值”列（第4、5列）在溢出时隐藏并显示省略号。基于每行 7 列 */
+            .dotnet-grid-table .cell:nth-child(7n+4),
+            .dotnet-grid-table .cell:nth-child(7n+5) {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
 
         /* 在非常窄的屏幕上才变为单列（阈值较低，避免平板/桌面触发） */
         @media (max-width: 420px) {
-            .dotnet-grid-table { grid-template-columns: 1fr; font-size: 12px; }
-            .dotnet-grid-table .header { display: none; }
-            .dotnet-grid-table .cell { border-right: none; padding: 10px 12px; }
-            .dotnet-grid-table .cell:before { content: attr(data-label); display: block; font-weight: 600; margin-bottom: 6px; }
+            .dotnet-grid-table {
+                grid-template-columns: 1fr;
+                font-size: 12px;
+            }
+
+                .dotnet-grid-table .header {
+                    display: none;
+                }
+
+                .dotnet-grid-table .cell {
+                    border-right: none;
+                    padding: 10px 12px;
+                }
+
+                    .dotnet-grid-table .cell:before {
+                        content: attr(data-label);
+                        display: block;
+                        font-weight: 600;
+                        margin-bottom: 6px;
+                    }
         }
     </style>
 </head>
@@ -328,6 +358,40 @@ return 0;</code></pre>
 </code></pre>
     </details>
 
+    <div class="level4">可为空 null 的值类型 T?： 表示其基础值类型T 的所有值及额外的 null 值。</div>
+    <div class="level5">由于值类型可隐式转换为相应的可为 null 值类型，因此可以像为其基础值类型那样向可为 null 的值类型的变量赋值。 还可分配 null 值。</div>
+    <details class="level5">
+        <summary>检查可为空值类型的实例</summary>
+        <pre data-prismjs-copy="复制" data-prismjs-copy-error="复制失败" data-prismjs-copy-success="已复制"><code class="language-csharp">
+    1.
+    if (a is int valueOfA)
+    {
+    Console.WriteLine($"a is {valueOfA}");
+    }
+
+    2.
+    if (b.HasValue)
+    {
+    Console.WriteLine($"b is {b.Value}");
+    }
+
+    3.
+    if (c != null)
+    {
+    Console.WriteLine($"c is {c.Value}");
+    }
+</code></pre>
+    </details>
+
+    <details class="level5">
+        <summary>使用 null 合并运算符 ?? 从可为空的值类型转换为基础类型</summary>
+        <pre data-prismjs-copy="复制" data-prismjs-copy-error="复制失败" data-prismjs-copy-success="已复制"><code class="language-csharp">
+    int? c = null;
+    int d = c ?? -1;
+    Console.WriteLine($"d is {d}");  // output: d is -1
+</code></pre>
+    </details>
+
     <div class="level3">2.4 自定义类型</div>
     <div class="level4">类 - 用于建模行为和复杂对象的引用类型。 支持继承和多态性。</div>
     <div class="level4">结构 - 小型轻型数据的值类型。 每个变量都有自己的副本。</div>
@@ -449,7 +513,7 @@ return 0;</code></pre>
     }
 </code></pre>
 
-    <div class="level2"><a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/">3 运算符、表达式</a></div>
+    <div class="level2">3 <a href="https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/">运算符、表达式</a></div>
     <div class="level3">3.1 算数运算符</div>
     <div class="level4">一元： ++（增量）、--（减量）、+（加）和 -（减）运算符；</div>
     <div class="level4">二元： *（乘法）、/（除法）、%（余数）、+（加法）和 -（减法）运算符；</div>
@@ -485,6 +549,23 @@ return 0;</code></pre>
     <div class="level4">as 运算符将表达式显式转换为给定类型。</div>
     <div class="level4">强制转换表达式执行到目标类型的显式转换。</div>
     <div class="level4">typeof 运算符获取某个类型的 System.Type 实例。</div>
+    <div class="level3">3.9 用户定义转换运算符 (略)</div>
+    <div class="level3">3.10 与指针相关的运算符 (略)</div>
+    <div class="level3">3.11 赋值运算符 = ：将其右操作数的值赋给变量、属性或由其左操作数给出的索引器元素</div>
+    <div class="level3">3.12 => 运算符、Lambda 表达式和匿名函数</div>
+    <div class="level4">lambda 表达式的两种形式：</div>
+    <div class="level5">以表达式为主体的表达式 lambda： (input-parameters) => expression</div>
+    <div class="level5">语句块作为其主体的语句 lambda： (input-parameters) => { <sequence-of-statements> }</div>
+    <div class="level4">参数：在无法推断参数类型时，需要显式指定参数类型。单参数：可以省略括号。</div>
+    <div class="level5">默认参数值</div>
+    <div class="level5">params 参数</div>
+    <div class="level4">用途</div>
+    <div class="level5">简单函数：Lambda 表达式</div>
+    <div class="level5">成员：表达式主体成员</div>
+    <div class="level4">委托类型</div>
+    <div class="level5">Action	无返回值</div>
+    <div class="level5">Func<T,TResult>	有返回值</div>
+    <div class="level4">Expression 树：将Lambda表示为数据结构，可被查询提供程序解析和翻译（例如转换为SQL）</div>
 
 
     <div class="level2">4 流程控制</div>
